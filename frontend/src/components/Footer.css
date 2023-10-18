@@ -14,7 +14,9 @@ footer {
   
   .footer-contact {
     width: 25%;
-    font-size: 15px;
+    font-size: 2px;
+    opacity: 0.5;
+    border-right: #333 2px solid;
   }
 
   .footer-contact h3 {
@@ -35,7 +37,9 @@ footer {
 
   .footer-links {
     width: 30%;
-    font-size: 15px;
+    font-size: 10px;
+    opacity: 0.5;
+    border-right: #333 2px solid;
   }
   
   .footer-links h3 {
@@ -61,6 +65,9 @@ footer {
   .footer-info {
     width: 40%;
     margin-right: 30px;
+    font-size: 10px;
+    padding: 0 1rem ;
+    opacity: 0.5;
   }
   
   .footer-info h3 {
@@ -79,15 +86,27 @@ footer {
 
   .footer-social {
     width: 25%;
+    font-size: 15px;
+    opacity: 0.5;
+    border-right: #333 2px solid;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .footer-social h3 {
-    font-size: 15px;
+    font-size: 5px;
     margin-bottom: 20px;
   }
   
   .footer-social ul {
+    opacity:1;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 0;
     margin: 0;
   }

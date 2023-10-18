@@ -1,6 +1,9 @@
   .header {
     display: flex;
-    background-color: white;
+    background-color: rgb(248, 235, 235);
+    justify-content: space-around;
+    align-items: center;  
+    
   }
   
   .navbar-logo {

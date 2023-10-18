@@ -4,13 +4,17 @@ import Login from './pages/login';
 import Footer from './components/Footer'
 import CreateAcc from './pages/CreateAcc';
 import Home from './pages/Home';
+import SelectionSction from './pages/SelectionSction';
 
 function App() {
   return (
       <div className='App'>
        
         <Header/>
-        {/* <footer/> */}
+        <Home/>
+        <SelectionSction/>
+
+        <Footer/>
       </div>
   )
 }
