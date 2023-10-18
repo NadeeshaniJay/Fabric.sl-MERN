@@ -7,7 +7,7 @@ import linkedin from "../assests/linkedin.png";
 export default function Footer() {
   return (
     <div>
-      <footer className=" mt-24  border-top border-2">
+      <footer className=" mt-24 border-top border-2">
         <div className="footer-container">
           <div className="footer-contact">
             <h3>CONTACT US</h3>
@@ -102,8 +102,9 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <hr></hr>
+        
         <div className="footer-copyright">
+          <hr></hr>
           <p>&copy; Copyright 2023 Fabric.sl</p>
         </div>
       </footer>

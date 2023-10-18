@@ -1,11 +1,8 @@
-
-// add mongodb database and check server
-
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const fabricSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -28,6 +25,6 @@ const userSchema = new Schema({
     }
 })
 
-const user = mongoose.model("users",userSchema);
+const user = mongoose.model("users",fabricSchema);
 
 module.exports = user;

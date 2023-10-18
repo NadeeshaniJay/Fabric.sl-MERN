@@ -14,7 +14,7 @@ export default function CreateAcc() {
                         <p>Shop our curated designs for the trending fashions</p>
                     </div>
 
-                    <div className="contentAcc">
+                    <div className="contentAcc  ">
                         <h1>Create an Account</h1>
                         <hr></hr>
                         <div className="nameAcc">

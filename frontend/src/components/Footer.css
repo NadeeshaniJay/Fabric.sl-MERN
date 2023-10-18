@@ -15,42 +15,47 @@ footer {
   .footer-contact {
     width: 25%;
     font-size: 2px;
-    opacity: 0.5;
-    border-right: #333 2px solid;
+    border-right: rgb(213, 209, 209) 1.3px solid;
   }
 
   .footer-contact h3 {
     font-size: 15px;
+    opacity: 0.8;
   }
 
   .footer-contact h4 {
     font-size: 10px;
+    opacity: 0.8;
+    padding: 5px 0 2px ;
   }
 
   .footer-contact p {
     font-size: 10px;
+    opacity: 0.5;
   }
 
   .footer-contact a {
     font-size: 10px;
+    opacity: 0.5;
   }
 
   .footer-links {
     width: 30%;
     font-size: 10px;
-    opacity: 0.5;
-    border-right: #333 2px solid;
+    border-right: rgb(213, 209, 209) 1.3px solid;
   }
   
   .footer-links h3 {
     font-size: 15px;
     margin-bottom: 10px;
+    opacity: 0.8;
   }
   
   .footer-links ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    opacity: 0.5;
   }
   
   .footer-links ul li {
@@ -64,20 +69,21 @@ footer {
   
   .footer-info {
     width: 40%;
-    margin-right: 30px;
-    font-size: 10px;
+    margin-right: 10px;
+    font-size: 15px;
     padding: 0 1rem ;
-    opacity: 0.5;
   }
   
   .footer-info h3 {
     font-size: 15px;
     margin-bottom: 10px;
+    opacity: 0.8;
   }
   
   .footer-info p {
     font-size: 10px;
     line-height: 1.5;
+    opacity: 0.5;
   }
   
   .footer-shop {
@@ -86,18 +92,16 @@ footer {
 
   .footer-social {
     width: 25%;
-    font-size: 15px;
-    opacity: 0.5;
-    border-right: #333 2px solid;
-    /* display: flex; */
+    border-right: rgb(213, 209, 209) 1.3px solid;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
   
   .footer-social h3 {
-    font-size: 5px;
+    font-size: 15px;
     margin-bottom: 20px;
+    opacity: 0.8;
   }
   
   .footer-social ul {
@@ -109,6 +113,7 @@ footer {
     justify-content: center;
     padding: 0;
     margin: 0;
+    opacity: 0.7;
   }
   
   .footer-social ul li {
@@ -123,9 +128,11 @@ footer {
   .footer-copyright {
     width: 100%;
     text-align: bottom;
+    margin-top: 10px;
   }
   
   .footer-copyright p {
     font-size: 12px;
+    opacity: 0.5;
+    margin-bottom: 0;
   }
-  

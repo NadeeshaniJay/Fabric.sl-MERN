@@ -1,6 +1,6 @@
   .header {
     display: flex;
-    background-color: rgb(248, 235, 235);
+    background-color: rgb(255, 255, 255);
     justify-content: space-around;
     align-items: center;  
     
@@ -29,7 +29,7 @@
   }
   
   .navbar-menu-item a:hover {
-    color: #858383;
+    color: #a9a1a1;
   }
   
   .navbar-search {
@@ -40,7 +40,7 @@
   
   .navbar-search input {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #efe7e7;
     border-radius: 10px;
     width: 200px;
     height: 20px;
