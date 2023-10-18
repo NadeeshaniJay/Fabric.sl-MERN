@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import './Home.css';
-import homelogo from '../assests/logo/logo5.png';
 import homeImg1 from '../assests/img1.jpg';
-import homeImg2 from '../assests/img2.jpg';
 
 export default function Home() {
     return(

@@ -3,6 +3,7 @@ import "./Footer.css";
 import insta from "../assests/instagram.png";
 import fb from "../assests/facebook.png";
 import linkedin from "../assests/linkedin.png";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -20,7 +21,7 @@ export default function Footer() {
             </p>
 
             <h4>E-MAIL</h4>
-            <a href="#">fabric.sl@gmail.com</a>
+            <a href="#" class="hover:text-violet-800">fabric.sl@gmail.com</a>
 
             <h4>HOTLINE</h4>
             <p>
@@ -52,23 +53,25 @@ export default function Footer() {
           </div>
 
           <div className="footer-links">
-            <div className="footer-shop">
+            <div className="footer-shop ">
               <h3>SHOP</h3>
               <ul>
                 <li>
-                  <a href="#">Fashion Fabrics</a>
+                  <a href="#" class="hover:text-violet-800">Fashion Fabrics</a>
+                  <NavLink to="/fashionfabrics" />
                 </li>
                 <li>
-                  <a href="#">Home Fabrics</a>
+                  <a href="#" class="hover:text-violet-800">Home Fabrics</a>
+                  <NavLink to="/homefabrics" />
                 </li>
                 <li>
-                  <a href="#">Leather</a>
+                  <a href="#" class="hover:text-violet-800">Leather</a>
                 </li>
                 <li>
-                  <a href="#">Trims</a>
+                  <a href="#" class="hover:text-violet-800">Trims</a>
                 </li>
                 <li>
-                  <a href="#">Buttons</a>
+                  <a href="#" class="hover:text-violet-800">Buttons</a>
                 </li>
               </ul>
             </div>
@@ -76,13 +79,13 @@ export default function Footer() {
               <h3>HELP</h3>
               <ul>
                 <li>
-                  <a href="#">My Account</a>
+                  <a href="#" class="hover:text-gray-500">My Account</a>
                 </li>
                 <li>
-                  <a href="#">Wishlist</a>
+                  <a href="#" class="hover:text-gray-500">Wishlist</a>
                 </li>
                 <li>
-                  <a href="#">Cart</a>
+                  <a href="#" class="hover:text-gray-500">Cart</a>
                 </li>
               </ul>
             </div>

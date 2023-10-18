@@ -7,14 +7,14 @@ import Cart from "../assests/cart.png";
 
 export default function Header() {
   return (
-    <div className="header  ">
+    <div className="header">
       <div className=" items-center">
         <ul className="navbar-menu">
           <div class="dropdown">
             <button
               data-collapse-toggle="navbar-hamburger"
               type="button"
-              class="inline-flex items-center justify-center p-2 w-10 h-10 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              class="inline-flex items-center justify-center p-2 w-10 h-10 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
               aria-controls="navbar-hamburger"
               aria-expanded="false"
             >
@@ -37,20 +37,22 @@ export default function Header() {
             </button>
 
             <div class="dropdown-content">
-              <a href="#">Fashion fabrics</a>
+              <a href="/fashionfabrics">Fashion Fabrics</a>
               <a href="#">Home Fabrics</a>
               <a href="#">Leather</a>
               <a href="#">Trims</a>
               <a href="#">Buttons</a>
             </div>
           </div>
+        </ul>
+        <div className="navbar-items">
           <li className="navbar-menu-item">
             <a href="#">About</a>
           </li>
           <li className="navbar-menu-item">
             <a href="#">Contact Us</a>
           </li>
-        </ul>
+        </div>
       </div>
 
       <div>
