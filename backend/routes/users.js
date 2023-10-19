@@ -1,19 +1,19 @@
 const router = require("express").Router();
-let user = require("../models/user");
+const user = require("../models/user");
 
-router.route("/add").post((req,res)=> {
-    const name = req.body.name;
-    const age = Number(req.body.age);
-    const gender = req.body.gender;
-    const address = req.body.address;
-    const contact_no = Number(req.body.contact_no);
+
+router.route("/createAcc").post((req,res)=> {
+   const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
+    const password = req.body.password;
+
 
     const newuser = new user({
-        name,
-        age,
-        gender,
-        address,
-        contact_no
+        firstName,
+        lastName,
+        email,
+        password
     })
 
     newuser.save().then(() => {
@@ -23,57 +23,29 @@ router.route("/add").post((req,res)=> {
     })
 })
 
-router.route("/").get((req,res) => {
-    user.find().then((users) => {
-        res.json(users)
-    }).catch((err) => {
-        console.log(err)
-    })
-})
 
-router.route("/update/:id").put(async(req,res) => {
-    let userId = req.params.id;
-    const {name, age, gender, address, contact_no} = req.body;
 
-    const updateuser = {
-        name,
-        age,
-        gender,
-        address,
-        contact_no
+//login
+// login
+router.route("/login").post(async (req, res) => {
+    // Get the user email and password from the request body
+    const { email, password } = req.body;
+  
+    try {
+     
+      const newuser = await user.findOne({ email });
+
+      
+      if (!newuser) {
+        return res.status(400).json({ error: "User not found" });
+      }
+      res.status(200).json({ user: newuser});
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Server error" });
     }
+  });
+  
 
-    const update = await user.findByIdAndUpdate(userId, updateuser)
-    .then(() => {
-        res.status(200).send({status: "User Updated"});
-    }).catch((err) => {
-        console.log(err);
-        res.status(500).send({status:"Error with updating data",error: err.message});
-    });
-
-});
-
-router.route("/delete/:id").delete(async (req,res) => {
-    let userId = req.params.id;
-
-    await user.findByIdAndDelete(userId)
-        .then(() => {
-            res.status(200).send({status: "User Deleted"});
-    }).catch((err) => {
-        console.log(err.message);
-        res.status(500).send({status:"Error with delete user", error: err.message});
-    })
-})
-
-router.route("/get/:id").get(async (req,res) => {
-    let userId = req.params.id;
-    const founduser = await user.findById(userId)
-    .then((user) => {
-        res.status(200).send({status: "User Fetched",user: user})
-    }).catch((err) => {
-        console.log(err.message);
-        res.status(500).send({status:"Error with get user", error: err.message});
-    })
-})
 
 module.exports = router;

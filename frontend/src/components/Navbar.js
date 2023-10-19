@@ -5,10 +5,10 @@ import Search from "../assests/search.png";
 import Profile from "../assests/user logo.png";
 import Cart from "../assests/cart.png";
 
-export default function Header() {
+export default function Navbar() {
   return (
     <div className="header">
-      <div className=" items-center">
+      <div className="flex items-center">
         <ul className="navbar-menu">
           <div class="dropdown">
             <button
@@ -45,25 +45,28 @@ export default function Header() {
             </div>
           </div>
         </ul>
-        <div className="navbar-items">
-          <li className="navbar-menu-item">
+        <div className="flex  list-none gap-10 px-10">
+          <li >
             <a href="#">About</a>
           </li>
-          <li className="navbar-menu-item">
+          <li >
             <a href="#">Contact Us</a>
+          </li>
+          <li >
+            <a href="/addproduct" >Add Product</a>
           </li>
         </div>
       </div>
 
       <div>
-        <a className="navbar-logo" href="#">
+        <a className="navbar-logo" href="/">
           <img src={Logomain} alt="Logo" width="150" height="150" />
         </a>
       </div>
 
       <div>
         <div className=" flex gap-3 items-center">
-          <a className="navbar-profile" href="#">
+          <a className="navbar-profile" href="/login">
             <img src={Profile} alt="profile" width="30" height="30" />
           </a>
           <p>Items: 0</p>

@@ -22,7 +22,11 @@ const fabricSchema = new Schema({
     price: {
         type: Number,
         required: true
-    }
+    },
+    imageURL:{
+        type: String,
+        required: true
+    },
 })
 
 const fabric = mongoose.model("fabrics",fabricSchema);

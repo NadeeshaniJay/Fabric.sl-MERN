@@ -5,6 +5,8 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
+const fabricRouter = require("./routes/fabrics.js");
+const authRouter = require("./routes/users.js");
 
 const PORT = process.env.PORT || 8081;
 const URL = process.env.MONGODB_URL;
@@ -24,9 +26,9 @@ connection.once("open", () => {
     console.log("Mongodb Connection Success!");
 });
 
-const fabricRouter = require("./routes/fabrics.js");
 
 app.use("/fabric",fabricRouter);
+app.use("/users",authRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port ${PORT}`);

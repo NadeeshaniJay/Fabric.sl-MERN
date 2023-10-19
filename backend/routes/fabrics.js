@@ -7,13 +7,16 @@ router.route("/add").post((req,res)=> {
     const qty = Number(req.body.qty);
     const category = req.body.category;
     const price = Number(req.body.price);
+    const imageURL = req.body.imageURL;
 
     const newfabric = new fabric({
         name,
         code,
         qty,
         category,
-        price
+        price,
+        imageURL
+
     })
 
     newfabric.save().then(() => {
@@ -40,7 +43,9 @@ router.route("/update/:id").put(async(req,res) => {
         code,
         qty,
         category,
-        price
+        price,
+    imageURL
+
     }
 
     const update = await fabric.findByIdAndUpdate(fabricId, updatefabric)
