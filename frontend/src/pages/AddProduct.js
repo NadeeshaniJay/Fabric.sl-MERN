@@ -1,9 +1,8 @@
 import React from "react";
 import axios from "axios";
 
-
 export default function AddProduct() {
-  //state
+  
   const [name, setName] = React.useState("");
   const [code, setCode] = React.useState("");
   const [qty, setQty] = React.useState("");
@@ -11,14 +10,14 @@ export default function AddProduct() {
   const [price, setPrice] = React.useState("");
   const [imageURL, setImageURL] = React.useState("");
 
-  //handlesubmit use axios
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const newProduct = { name, code, qty, category, price, imageURL };
       await axios.post("http://localhost:8081/fabric/add", newProduct);
       alert("Product Added");
-      //go to home page
+      
       window.location = "/";
     } catch (error) {
       console.log(error);

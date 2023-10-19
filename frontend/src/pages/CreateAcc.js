@@ -6,19 +6,19 @@ import { Link } from "react-router-dom";
 import axios from "axios" ;
 export default function CreateAcc() {
 
-  //state
+  
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState(""); 
   const [password, setPassword] = React.useState("");
 
-  //handlesubmit use axios
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newUser = { firstName, lastName, email, password };
     await axios.post("http://localhost:8081/users/createAcc", newUser);
     alert("User Added");
-    //go to home page
+    
     window.location = "/";
   };
 

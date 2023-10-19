@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
 
             <h4>E-MAIL</h4>
-            <a href="#" class="hover:text-violet-800">fabric.sl@gmail.com</a>
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="hover:text-violet-800">fabric.sl@gmail.com</a>
 
             <h4>HOTLINE</h4>
             <p>

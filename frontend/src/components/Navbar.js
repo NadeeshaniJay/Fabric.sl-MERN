@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css";
+import "./Navbar.css";
 import Logomain from "../assests/logo/logo2.png";
 import Search from "../assests/search.png";
 import Profile from "../assests/user logo.png";
@@ -38,19 +38,19 @@ export default function Navbar() {
 
             <div class="dropdown-content">
               <a href="/fashionfabrics">Fashion Fabrics</a>
-              <a href="#">Home Fabrics</a>
-              <a href="#">Leather</a>
-              <a href="#">Trims</a>
-              <a href="#">Buttons</a>
+              <a href="/homefabrics">Home Fabrics</a>
+              <a href="/leather">Leather</a>
+              <a href="/trims">Trims</a>
+              <a href="/buttons">Buttons</a>
             </div>
           </div>
         </ul>
         <div className="flex  list-none gap-10 px-10">
           <li >
-            <a href="#">About</a>
+            <a href="/about">About</a>
           </li>
           <li >
-            <a href="#">Contact Us</a>
+            <a href="/contact">Contact Us</a>
           </li>
           <li >
             <a href="/addproduct" >Add Product</a>
@@ -70,7 +70,7 @@ export default function Navbar() {
             <img src={Profile} alt="profile" width="30" height="30" />
           </a>
           <p>Items: 0</p>
-          <a className="navbar-cart" href="#">
+          <a className="navbar-cart" href="/cart">
             <img src={Cart} alt="cart" width="30" height="30" />
           </a>
         </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Items from "../components/Items";
 import axios from "axios";
+import UpdateProduct from "./UpdateProduct";
 
 function FashionFabrics() {
   const [items, setItems] = useState([]);
@@ -32,6 +33,20 @@ function FashionFabrics() {
     }
   };
 
+  const UpdateProduct = async (id) => {
+    try {
+      await axios.put(`http://localhost:8081/fabric/update/${id}`);
+      alert("Product Updated");
+
+      // Redirect to the fabric details page or the fabric list page.
+      // You can use React Router for navigation.
+      window.location = "/fasionfabrics";
+      
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <div className="px-20 py-10">
@@ -57,6 +72,7 @@ function FashionFabrics() {
                 price={item.price}
                 imageURL={item.imageURL}
                 deleteItem={deleteItem}
+                UpdateProduct={UpdateProduct}
               />
             </div>
           ))}

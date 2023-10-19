@@ -44,7 +44,7 @@ router.route("/update/:id").put(async(req,res) => {
         qty,
         category,
         price,
-    imageURL
+        imageURL
 
     }
 

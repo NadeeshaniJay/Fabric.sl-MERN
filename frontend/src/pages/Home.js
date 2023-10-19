@@ -7,9 +7,8 @@ export default function Home() {
   return (
     <div className="home">
       <div className="">
-        
-        <p>Discover Elegance in Every Thread</p>
-        <div>
+        <div className="flex">
+          <p>Discover Elegance in Every Thread</p>
           <img src={homeImg1} alt="homeImg" className="home-img" />
         </div>
 

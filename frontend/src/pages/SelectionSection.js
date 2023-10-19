@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import the Link component from React Router
+import { Link } from "react-router-dom"; 
 import SectionComp from "../components/SectionComp";
 import Fashion from "../assests/img47.jpg";
 import Home from "../assests/img75.jpg";
