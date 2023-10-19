@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Items from "../components/Items";
 import axios from "axios";
-import UpdateProduct from "./UpdateProduct";
 
 function FashionFabrics() {
   const [items, setItems] = useState([]);
@@ -33,14 +32,14 @@ function FashionFabrics() {
     }
   };
 
-  const UpdateProduct = async (id) => {
+  const handleUpdateProduct = async (id) => { // Renamed the function
     try {
       await axios.put(`http://localhost:8081/fabric/update/${id}`);
       alert("Product Updated");
 
       // Redirect to the fabric details page or the fabric list page.
       // You can use React Router for navigation.
-      window.location = "/fasionfabrics";
+      window.location = "/fashionfabrics";
       
     } catch (error) {
       console.log(error);
@@ -64,7 +63,7 @@ function FashionFabrics() {
           {items.map((item) => (
             <div key={item._id} className="col-md-3">
               <Items
-                id={item._id} // Pass the 'id' prop to the Items component
+                id={item._id}
                 name={item.name}
                 code={item.code}
                 qty={item.qty}
@@ -72,7 +71,7 @@ function FashionFabrics() {
                 price={item.price}
                 imageURL={item.imageURL}
                 deleteItem={deleteItem}
-                UpdateProduct={UpdateProduct}
+                UpdateProduct={handleUpdateProduct} // Updated the function name
               />
             </div>
           ))}

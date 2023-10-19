@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function UpdateProduct() {
-
+  const [fabricId, setFabricId] = useState("");
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
   const [qty, setQty] = useState("");
@@ -12,10 +12,12 @@ export default function UpdateProduct() {
 
   useEffect(() => {
     // Fetch fabric details by ID and populate the state
-    const fabricId = {fabricId};
-    axios.get(`http://localhost:8081/fabric/update/${fabricId}`)
+    const fabricId = { fabricId };
+    axios
+      .get("http://localhost:8081/fabric/update/${fabricId}")
       .then((response) => {
         const fabric = response.data;
+        setFabricId(fabric._id);
         setName(fabric.name);
         setCode(fabric.code);
         setQty(fabric.qty);
@@ -30,15 +32,19 @@ export default function UpdateProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const fabricId = {fabricId};
+    const fabricId = { fabricId };
     try {
       const updatefabric = { name, code, qty, category, price, imageURL };
-      await axios.put(`http://localhost:8081/fabric/update/${fabricId}`, updatefabric);
+      await axios.put(
+        "http://localhost:8081/fabric/update/${fabricId}",
+        updatefabric
+      );
       alert("Product Updated");
-    
+
       // Redirect to the fabric details page or the fabric list page.
       // You can use React Router for navigation.
       window.location = "/fasionfabrics";
+      
     } catch (error) {
       console.log(error);
     }
@@ -51,7 +57,10 @@ export default function UpdateProduct() {
       <form onSubmit={handleSubmit}>
         {/* Update the input fields to allow editing of fabric details */}
         <div className="mb-6">
-          <label for="name" className="block mb-2 text-sm font-medium text-gray-900">
+          <label
+            for="name"
+            className="block mb-2 text-sm font-medium text-gray-900"
+          >
             Product name
           </label>
           <input
@@ -65,7 +74,10 @@ export default function UpdateProduct() {
         </div>
 
         <div className="mb-6">
-          <label for="code" className="block mb-2 text-sm font-medium text-gray-900">
+          <label
+            for="code"
+            className="block mb-2 text-sm font-medium text-gray-900"
+          >
             Product code
           </label>
           <input
@@ -79,7 +91,10 @@ export default function UpdateProduct() {
         </div>
 
         <div className="mb-6">
-          <label for="qty" className="block mb-2 text-sm font-medium text-gray-900">
+          <label
+            for="qty"
+            className="block mb-2 text-sm font-medium text-gray-900"
+          >
             Product Quantity
           </label>
           <input
@@ -93,7 +108,10 @@ export default function UpdateProduct() {
         </div>
 
         <div className="mb-6">
-          <label for="category" className="block mb-2 text-sm font-medium text-gray-900">
+          <label
+            for="category"
+            className="block mb-2 text-sm font-medium text-gray-900"
+          >
             Product Category
           </label>
           <input
