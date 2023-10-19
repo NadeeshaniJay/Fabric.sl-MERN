@@ -1,11 +1,10 @@
 import React from "react";
 import "./CreateAcc.css";
 import LogoAcc from "../assests/logo/logo2.png";
-import BackgroundAcc from "../assests/chair.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios" ;
-export default function CreateAcc() {
 
+export default function CreateAcc() {
   
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
@@ -23,25 +22,20 @@ export default function CreateAcc() {
   };
 
  
-
- 
-
-
   return (
     <div className="create-acc">
-      <img src={BackgroundAcc} alt="background" className="background" />
-
       <div className="container">
-        <div className="paragraph">
+        <div className="paragraph mx-20">
           <p>Shop our curated designs for the trending fashions</p>
         </div>
 
-        <div className="contentAcc  ">
+        <div className="contentAcc my-5">
+          <div className="text-2xl text-violet-500 font-bold my-10 text-center">
           <h1>Create an Account</h1>
-          <hr></hr>
-
-          <form onSubmit={ handleSubmit} className=" flex flex-col gap-4">
-            <div className="nameAcc">
+          </div>
+          
+          <form onSubmit={handleSubmit} className=" flex flex-col gap-4">
+            <div className="nameAcc my-2">
               <label for="name">
                 <b>Name*</b>
               </label>
@@ -58,7 +52,7 @@ export default function CreateAcc() {
                 required
               />
             </div>
-            <div className="emailAcc">
+            <div className="emailAcc my-2">
               <label for="email">
                 <b>Email Address*</b>
               </label>
@@ -69,7 +63,7 @@ export default function CreateAcc() {
                 required
               />
             </div>
-            <div className="passwordAcc">
+            <div className="passwordAcc my-2">
               <label for="psw">
                 <b>Password*</b>
               </label>
@@ -82,7 +76,7 @@ export default function CreateAcc() {
             </div>
             <p>
               {" "}
-              Dont have an Account?{" "}
+              Already have an Account?{" "}
               <span>
                 {" "}
                 <Link to={"/login"} className=" text-blue-700 underline">
@@ -98,7 +92,7 @@ export default function CreateAcc() {
           </form>
         </div>
 
-        <div>
+        <div className="my-20">
           <img src={LogoAcc} alt="logo" className="logoAcc" />
         </div>
       </div>

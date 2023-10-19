@@ -18,23 +18,24 @@ export default function AddProduct() {
       await axios.post("http://localhost:8081/fabric/add", newProduct);
       alert("Product Added");
       
-      window.location = "/";
+      window.location = "/addproduct";
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="px-20">
-      <h1>ADD PRODUCT</h1>
-
-      <form onSubmit={handleSubmit}>
-        <div class="mb-6 ">
+    <div className="px-20 mx-40">
+      <div className="text-2xl text-violet-500 font-bold">
+        <h1>ADD PRODUCT</h1>
+      </div>
+      <form onSubmit={handleSubmit} >
+        <div class="mb-6">
           <label
             for="name"
-            class="block mb-2 text-sm font-medium text-gray-900"
+            class="block mb-2 text-sm font-medium text-gray-900 my-10"
           >
-            Poduct name
+            Poduct Name
           </label>
           <input
           onChange={(e) => setName(e.target.value)}
@@ -49,7 +50,7 @@ export default function AddProduct() {
             for="code"
             class="block mb-2 text-sm font-medium text-gray-900"
           >
-            Poduct code
+            Poduct Code
           </label>
           <input
             onChange={(e) => setCode(e.target.value)}
@@ -61,7 +62,7 @@ export default function AddProduct() {
         </div>
         <div class="mb-6">
           <label for="qty" class="block mb-2 text-sm font-medium text-gray-900">
-            Prodct quantity
+            Quantity
           </label>
           <input
             onChange={(e) => setQty(e.target.value)}
@@ -76,7 +77,7 @@ export default function AddProduct() {
             for="category"
             class="block mb-2 text-sm font-medium text-gray-900"
           >
-            Prodct category
+            Prodct Category
           </label>
           <input
             onChange={(e) => setCategory(e.target.value)}
@@ -91,7 +92,7 @@ export default function AddProduct() {
             for="price"
             class="block mb-2 text-sm font-medium text-gray-900"
           >
-            Prodct price
+            Price
           </label>
           <input
 
@@ -106,13 +107,12 @@ export default function AddProduct() {
         
         <div class="mb-6">
           <label
-            for="imahgeURL" 
+            for="imageURL" 
             class="block mb-2 text-sm font-medium text-gray-900"
             >
             Prodct image URL
           </label>
           <input
-
             onChange={(e) => setImageURL(e.target.value)}
             type="text"
             id="imageURL"

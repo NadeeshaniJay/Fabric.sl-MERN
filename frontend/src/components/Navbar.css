@@ -2,8 +2,7 @@
     display: flex;
     background-color: rgb(255, 255, 255);
     justify-content: space-around;
-    align-items: center;  
-    
+    align-items: center;
   }
   
   .navbar-logo {
@@ -18,9 +17,6 @@
     padding: 0;
   }
   
-  .navbar-menu-item {    
-    margin-left: 20px;
-  }
   
   .navbar-menu-item a {
     color: rgb(0, 0, 0);
@@ -41,9 +37,9 @@
   .navbar-search input {
     padding: 10px;
     border: 1px solid #efe7e7;
-    border-radius: 10px;
+    border-radius: 20px;
     width: 200px;
-    height: 20px;
+    height: 30px;
     font-size: 2px;
     
   }

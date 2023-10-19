@@ -35,17 +35,17 @@ export default function Footer() {
             <h3>FOLLOW US ON </h3>
             <ul>
               <li>
-                <a href="#">
+                <a href="/fb">
                   <img src={fb} alt="Logo" width="25" height="25" />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/insta">
                   <img src={insta} alt="Logo" width="35" height="30" />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/linkedin">
                   <img src={linkedin} alt="Logo" width="25" height="25" />
                 </a>
               </li>
@@ -57,38 +57,25 @@ export default function Footer() {
               <h3>SHOP</h3>
               <ul>
                 <li>
-                  <a href="#" class="hover:text-violet-800">Fashion Fabrics</a>
+                  <a href="/fashionfabrics" class="hover:text-violet-800">Fashion Fabrics</a>
                   <NavLink to="/fashionfabrics" />
                 </li>
                 <li>
-                  <a href="#" class="hover:text-violet-800">Home Fabrics</a>
+                  <a href="/homefabrics" class="hover:text-violet-800">Home Fabrics</a>
                   <NavLink to="/homefabrics" />
                 </li>
                 <li>
-                  <a href="#" class="hover:text-violet-800">Leather</a>
+                  <a href="/leather" class="hover:text-violet-800">Leather</a>
                 </li>
                 <li>
-                  <a href="#" class="hover:text-violet-800">Trims</a>
+                  <a href="/trims" class="hover:text-violet-800">Trims</a>
                 </li>
                 <li>
-                  <a href="#" class="hover:text-violet-800">Buttons</a>
+                  <a href="/buttons" class="hover:text-violet-800">Buttons</a>
                 </li>
               </ul>
             </div>
-            <div className="footer-help">
-              <h3>HELP</h3>
-              <ul>
-                <li>
-                  <a href="#" class="hover:text-gray-500">My Account</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-gray-500">Wishlist</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-gray-500">Cart</a>
-                </li>
-              </ul>
-            </div>
+            
           </div>
 
           <div className="footer-info">

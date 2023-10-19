@@ -22,25 +22,19 @@ function FashionFabrics() {
       await axios.delete(`http://localhost:8081/fabric/delete/${id}`);
       alert("Item deleted");
 
-      // Refresh window after deleting item
       window.location = "/fashionfabrics";
 
-      // Redirect to the home page (you should use React Router for this)
-      // Example: history.push("/")
     } catch (error) {
       console.error("Error deleting item:", error);
     }
   };
 
-  const handleUpdateProduct = async (id) => { // Renamed the function
+  const handleUpdateProduct = async (id) => {
+
     try {
       await axios.put(`http://localhost:8081/fabric/update/${id}`);
       alert("Product Updated");
-
-      // Redirect to the fabric details page or the fabric list page.
-      // You can use React Router for navigation.
       window.location = "/fashionfabrics";
-      
     } catch (error) {
       console.log(error);
     }
@@ -48,18 +42,18 @@ function FashionFabrics() {
 
   return (
     <div>
-      <div className="px-20 py-10">
-        <h1 className="text-2xl font-bold">Fashion Fabrics</h1>
-        <p className="opacity-50">
-          Fashion is a form of self-expression and a cultural phenomenon that
-          encompasses clothing, accessories, footwear, makeup, hairstyles, and
-          even body modifications. It is a dynamic and constantly evolving
-          aspect of human culture, reflecting societal influences, historical
-          trends, and individual preferences. Here are some key aspects of
-          fashion:
+      <div className="">
+        <h1 className="text-2xl font-bold px-20 py-5">Fashion Fabrics</h1>
+        <p className="opacity-50 px-20">
+          Fashion fabrics are an essential component of the fashion industry,
+          and they play a crucial role in determining the aesthetics, comfort,
+          and functionality of clothing and accessories. These fabrics are the
+          materials from which garments, accessories, and textiles are crafted.
+          They come in a wide range of styles, textures, patterns, and
+          compositions to suit various fashion trends, seasons, and purposes.
         </p>
 
-        <div className="grid grid-cols-4 gap-5 p-20">
+        <div className="grid grid-cols-4 gap-10 p-20">
           {items.map((item) => (
             <div key={item._id} className="col-md-3">
               <Items
@@ -71,7 +65,7 @@ function FashionFabrics() {
                 price={item.price}
                 imageURL={item.imageURL}
                 deleteItem={deleteItem}
-                UpdateProduct={handleUpdateProduct} // Updated the function name
+                UpdateProduct={handleUpdateProduct}
               />
             </div>
           ))}

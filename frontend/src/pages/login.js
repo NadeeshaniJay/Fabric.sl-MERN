@@ -20,12 +20,12 @@ export default function Login() {
     <div className="login">
       <div className="container bg-white text-center justify-center flex">
         <div className="content">
-          <div className="title m-5">
+          <div className="title m-5 font-bold text-2xl text-gray-700">
             <span>SIGN IN</span>
             <hr></hr>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="m-5">
+            <div className="m-5 text-slate-500">
               <label for="email">
                 <b>Email Address*</b>
               </label>
@@ -37,7 +37,7 @@ export default function Login() {
                 required
               />
             </div>
-            <div>
+            <div className="m-5 text-slate-500">
               <label for="psw">
                 <b>Password</b>
               </label>

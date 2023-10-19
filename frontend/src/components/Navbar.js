@@ -18,7 +18,6 @@ export default function Navbar() {
               aria-controls="navbar-hamburger"
               aria-expanded="false"
             >
-              <span class="sr-only">Open main menu</span>
               <svg
                 class="w-5 h-5"
                 aria-hidden="true"
@@ -45,7 +44,7 @@ export default function Navbar() {
             </div>
           </div>
         </ul>
-        <div className="flex  list-none gap-10 px-10">
+        <div className="flex list-none gap-10 px-10">
           <li >
             <a href="/about">About</a>
           </li>
@@ -59,7 +58,7 @@ export default function Navbar() {
       </div>
 
       <div>
-        <a className="navbar-logo" href="/">
+        <a className="navbar-logo " href="/">
           <img src={Logomain} alt="Logo" width="150" height="150" />
         </a>
       </div>
@@ -67,11 +66,11 @@ export default function Navbar() {
       <div>
         <div className=" flex gap-3 items-center">
           <a className="navbar-profile" href="/login">
-            <img src={Profile} alt="profile" width="30" height="30" />
+            <img src={Profile} alt="profile" width="40" height="40" />
           </a>
           <p>Items: 0</p>
           <a className="navbar-cart" href="/cart">
-            <img src={Cart} alt="cart" width="30" height="30" />
+            <img src={Cart} alt="cart" width="40" height="40" />
           </a>
         </div>
         <div className="navbar-search">
