@@ -80,3 +80,17 @@ input[type=name] {
 .container label {
   font-size: 15px;
 }
+
+.registerbtn {
+  width: 100px;
+  height: auto;
+  padding: 5px;
+  background-color: rgb(137, 78, 197);
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  justify-content: center;
+}

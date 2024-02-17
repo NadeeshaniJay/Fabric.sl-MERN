@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-export default function UpdateProduct() {
+import { useParams } from "react-router-dom";
+export default function UpdateProduct(props) {
   const [fabricId, setFabricId] = useState("");
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
@@ -10,40 +10,42 @@ export default function UpdateProduct() {
   const [price, setPrice] = useState("");
   const [imageURL, setImageURL] = useState("");
 
+  const { id } = useParams();
   useEffect(() => {
-    // Fetch fabric details by ID and populate the state
-    const fabricId = { fabricId };
-    axios
-      .get("http://localhost:8081/fabric/update/${fabricId}")
+    const fabricId = id;
+    console.log(fabricId);
+    async function fetchData() {
+      await axios
+      .get(`http://localhost:8081/fabric/get/${fabricId}`)
       .then((response) => {
         const fabric = response.data;
-        setFabricId(fabric._id);
-        setName(fabric.name);
-        setCode(fabric.code);
-        setQty(fabric.qty);
-        setCategory(fabric.category);
-        setPrice(fabric.price);
-        setImageURL(fabric.imageURL);
+        console.log(fabric.fabric);
+        setFabricId(fabric.fabric._id);
+        setName(fabric.fabric.name);
+        setCode(fabric.fabric.code);
+        setQty(fabric.fabric.qty);
+        setCategory(fabric.fabric.category);
+        setPrice(fabric.fabric.price);
+        setImageURL(fabric.fabric.imageURL);
       })
       .catch((error) => {
         console.log(error);
       });
+    }
+    fetchData();    
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const fabricId = { fabricId };
+    const fabricId = id;
+
+  
     try {
-      const updatefabric = { name, code, qty, category, price, imageURL };
-      await axios.put(
-        "http://localhost:8081/fabric/update/${fabricId}",
-        updatefabric
-      );
+      const updatefabric = { name, code, qty, category, price, imageURL,fabricId };
+      await axios.put(`http://localhost:8081/fabric/update/${fabricId}`,updatefabric);
       alert("Product Updated");
 
-      // Redirect to the fabric details page or the fabric list page.
-      // You can use React Router for navigation.
-      window.location = "/fasionfabrics";
+      window.location = "/fashionfabrics";
       
     } catch (error) {
       console.log(error);
@@ -55,7 +57,7 @@ export default function UpdateProduct() {
       <h1>UPDATE PRODUCT</h1>
 
       <form onSubmit={handleSubmit}>
-        {/* Update the input fields to allow editing of fabric details */}
+        
         <div className="mb-6">
           <label
             for="name"
@@ -81,7 +83,7 @@ export default function UpdateProduct() {
             Product code
           </label>
           <input
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setCode(e.target.value)}
             type="code"
             id="code"
             value={code}
@@ -98,10 +100,10 @@ export default function UpdateProduct() {
             Product Quantity
           </label>
           <input
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setQty(e.target.value)}
             type="qty"
             id="qty"
-            value={code}
+            value={qty}
             className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
           />
@@ -115,7 +117,7 @@ export default function UpdateProduct() {
             Product Category
           </label>
           <input
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setCategory(e.target.value)}
             type="category"
             id="category"
             value={category}
@@ -123,8 +125,41 @@ export default function UpdateProduct() {
             required
           />
         </div>
-        {/* Add similar input fields for other fabric details (code, qty, category, price, imageURL) */}
-        {/* Make sure to set their values from the state (e.g., value={code}) */}
+
+        <div className="mb-6">
+          <label
+            for="price"
+            className="block mb-2 text-sm font-medium text-gray-900"
+          >
+            Price
+          </label>
+          <input
+            onChange={(e) => setPrice(e.target.value)}
+            type="price"
+            id="price"
+            value={price}
+            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            required
+          />
+        </div>
+
+        <div className="mb-6">
+          <label
+            for="imageURL"
+            className="block mb-2 text-sm font-medium text-gray-900"
+          >
+            imageURL
+          </label>
+          <input
+            onChange={(e) => setImageURL(e.target.value)}
+            type="imageURL"
+            id="imageURL"
+            value={imageURL}
+            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            required
+          />
+        </div>
+
         <button
           type="submit"
           className="text-white bg-blue-700 hover-bg-blue-800 focus-ring-4 focus-outline-none focus-ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"

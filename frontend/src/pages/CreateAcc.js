@@ -85,7 +85,7 @@ export default function CreateAcc() {
               </span>{" "}
             </p>
 
-            <button type="submit" className="loginbtn">
+            <button type="submit" className="registerbtn">
               Register
             </button>
             

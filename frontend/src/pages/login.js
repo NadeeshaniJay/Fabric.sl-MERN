@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./login.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import BG from "../assests/img17.jpg";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -19,6 +20,7 @@ export default function Login() {
   return (
     <div className="login">
       <div className="container bg-white text-center justify-center flex">
+        <img src={BG} alt="Logo" className="w-70"/>
         <div className="content">
           <div className="title m-5 font-bold text-2xl text-gray-700">
             <span>SIGN IN</span>
@@ -54,8 +56,8 @@ export default function Login() {
           </form>
 
           <div>
-            <label className="checkbox m-2">
-              <input type="checkbox" checked={true} name="remember" /> Remember
+            <label className="checkbox1 m-2">
+              <input type="checkbox" checked/> Remember
               me
             </label>
           </div>

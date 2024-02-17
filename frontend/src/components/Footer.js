@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 export default function Footer() {
   return (
     <div>
-      <footer className=" mt-24 border-top border-2">
+      <footer className=" mt-10 border-top border-2">
         <div className="footer-container">
           <div className="footer-contact">
             <h3>CONTACT US</h3>
@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
 
             <h4>E-MAIL</h4>
-            <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="hover:text-violet-800">fabric.sl@gmail.com</a>
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" className="hover:text-violet-800">fabric.sl@gmail.com</a>
 
             <h4>HOTLINE</h4>
             <p>
@@ -57,21 +57,21 @@ export default function Footer() {
               <h3>SHOP</h3>
               <ul>
                 <li>
-                  <a href="/fashionfabrics" class="hover:text-violet-800">Fashion Fabrics</a>
+                  <a href="/fashionfabrics" className="hover:text-violet-800">Fashion Fabrics</a>
                   <NavLink to="/fashionfabrics" />
                 </li>
                 <li>
-                  <a href="/homefabrics" class="hover:text-violet-800">Home Fabrics</a>
+                  <a href="/homefabrics" className="hover:text-violet-800">Home Fabrics</a>
                   <NavLink to="/homefabrics" />
                 </li>
                 <li>
-                  <a href="/leather" class="hover:text-violet-800">Leather</a>
+                  <a href="/leather" className="hover:text-violet-800">Leather</a>
                 </li>
                 <li>
-                  <a href="/trims" class="hover:text-violet-800">Trims</a>
+                  <a href="/trims" className="hover:text-violet-800">Trims</a>
                 </li>
                 <li>
-                  <a href="/buttons" class="hover:text-violet-800">Buttons</a>
+                  <a href="/buttons" className="hover:text-violet-800">Buttons</a>
                 </li>
               </ul>
             </div>

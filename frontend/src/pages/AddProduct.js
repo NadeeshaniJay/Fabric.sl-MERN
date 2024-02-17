@@ -25,15 +25,15 @@ export default function AddProduct() {
   };
 
   return (
-    <div className="px-20 mx-40">
+    <div className="px-20 mx-80">
       <div className="text-2xl text-violet-500 font-bold">
         <h1>ADD PRODUCT</h1>
       </div>
       <form onSubmit={handleSubmit} >
-        <div class="mb-6">
+        <div className="mb-6">
           <label
             for="name"
-            class="block mb-2 text-sm font-medium text-gray-900 my-10"
+            className="block mb-2 text-sm font-medium text-gray-900 my-10"
           >
             Poduct Name
           </label>
@@ -41,14 +41,14 @@ export default function AddProduct() {
           onChange={(e) => setName(e.target.value)}
             type="productname"
             id="name"
-            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
           />
         </div>
-        <div class="mb-6">
+        <div className="mb-6">
           <label
             for="code"
-            class="block mb-2 text-sm font-medium text-gray-900"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Poduct Code
           </label>
@@ -56,26 +56,26 @@ export default function AddProduct() {
             onChange={(e) => setCode(e.target.value)}
             type="code"
             id="code"
-            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
           />
         </div>
-        <div class="mb-6">
-          <label for="qty" class="block mb-2 text-sm font-medium text-gray-900">
+        <div className="mb-6">
+          <label for="qty" className="block mb-2 text-sm font-medium text-gray-900">
             Quantity
           </label>
           <input
             onChange={(e) => setQty(e.target.value)}
             type="qty"
             id="qty"
-            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
           />
         </div>
-        <div class="mb-6">
+        <div className="mb-6">
           <label
             for="category"
-            class="block mb-2 text-sm font-medium text-gray-900"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Prodct Category
           </label>
@@ -83,14 +83,14 @@ export default function AddProduct() {
             onChange={(e) => setCategory(e.target.value)}
             type="category"
             id="category"
-            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             required
           />
         </div>
-        <div class="mb-6">
+        <div className="mb-6">
           <label
             for="price"
-            class="block mb-2 text-sm font-medium text-gray-900"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Price
           </label>

@@ -29,7 +29,7 @@ function App() {
             <Route path="/addproduct" element={<AddProduct />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/updateproduct" element={<UpdateProduct />} />
+            <Route path="/updateproduct/:id" element={<UpdateProduct />} />
           </Routes>
         </main>
         <Footer/>

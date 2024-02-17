@@ -32,9 +32,7 @@ function FashionFabrics() {
   const handleUpdateProduct = async (id) => {
 
     try {
-      await axios.put(`http://localhost:8081/fabric/update/${id}`);
-      alert("Product Updated");
-      window.location = "/fashionfabrics";
+      window.location = "/updateproduct/"+id;
     } catch (error) {
       console.log(error);
     }
@@ -65,7 +63,7 @@ function FashionFabrics() {
                 price={item.price}
                 imageURL={item.imageURL}
                 deleteItem={deleteItem}
-                UpdateProduct={handleUpdateProduct}
+                updateProduct={handleUpdateProduct}
               />
             </div>
           ))}
