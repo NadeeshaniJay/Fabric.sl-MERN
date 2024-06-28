@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+
 export default function UpdateProduct(props) {
   const [fabricId, setFabricId] = useState("");
   const [name, setName] = useState("");
@@ -9,8 +10,8 @@ export default function UpdateProduct(props) {
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [imageURL, setImageURL] = useState("");
+  const { id } = useParams(); 
 
-  const { id } = useParams();
   useEffect(() => {
     const fabricId = id;
     console.log(fabricId);
@@ -39,7 +40,6 @@ export default function UpdateProduct(props) {
     e.preventDefault();
     const fabricId = id;
 
-  
     try {
       const updatefabric = { name, code, qty, category, price, imageURL,fabricId };
       await axios.put(`http://localhost:8081/fabric/update/${fabricId}`,updatefabric);

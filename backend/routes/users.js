@@ -34,7 +34,6 @@ router.route("/login").post(async (req, res) => {
     try {
      
       const newuser = await user.findOne({ email });
-
       
       if (!newuser) {
         return res.status(400).json({ error: "User not found" });

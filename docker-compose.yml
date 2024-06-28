@@ -1,0 +1,39 @@
+
+# This file is used to define the services that will be used in the application.
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo_container
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017"
+
+  backend:
+    build: ./backend
+    container_name: backend_container
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongo
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - MONGO_URL=mongodb+srv://user:user123@fabriccluster.4pbg5aq.mongodb.net/
+
+  frontend:
+    build: ./frontend
+    container_name: frontend_container
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./frontend:/app
+      - /frontend/node_modules
+
+volumes:
+  mongo_data:

@@ -30,7 +30,6 @@ function FashionFabrics() {
   };
 
   const handleUpdateProduct = async (id) => {
-
     try {
       window.location = "/updateproduct/"+id;
     } catch (error) {

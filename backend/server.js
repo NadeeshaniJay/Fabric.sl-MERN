@@ -26,7 +26,6 @@ connection.once("open", () => {
     console.log("Mongodb Connection Success!");
 });
 
-
 app.use("/fabric",fabricRouter);
 app.use("/users",authRouter);
 

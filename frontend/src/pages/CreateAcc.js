@@ -21,7 +21,6 @@ export default function CreateAcc() {
     window.location = "/";
   };
 
- 
   return (
     <div className="create-acc">
       <div className="container">
