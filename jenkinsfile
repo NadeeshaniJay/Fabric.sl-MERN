@@ -22,12 +22,13 @@ pipeline {
                     bat 'docker build -t nadeeshanijay/fabricsl:%BUILD_NUMBER% .'
                 }
             }
+            }
         }
         stage('Login to Docker Hub') {
             steps {
-                withCredentials([string(credentialsId: 'fabricsl-id', variable: 'fabricsl-dockerhub')]) {
+                withCredentials([string(credentialsId: 'nadeeshani-docker', variable: 'fabricsl-app')]) {
                     script {
-                        bat "docker login -u nadeeshanijay -p %fabricsl%"
+                        bat "docker login -u nadeeshanijay -p %nadeeshanijay -p ${fabric}"
                     }
                 }
             }

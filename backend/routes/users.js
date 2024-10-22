@@ -1,13 +1,11 @@
 const router = require("express").Router();
 const user = require("../models/user");
 
-
 router.route("/createAcc").post((req,res)=> {
    const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const email = req.body.email;
     const password = req.body.password;
-
 
     const newuser = new user({
         firstName,
@@ -23,10 +21,6 @@ router.route("/createAcc").post((req,res)=> {
     })
 })
 
-
-
-//login
-// login
 router.route("/login").post(async (req, res) => {
     // Get the user email and password from the request body
     const { email, password } = req.body;
@@ -44,7 +38,5 @@ router.route("/login").post(async (req, res) => {
       res.status(500).json({ error: "Server error" });
     }
   });
-  
-
 
 module.exports = router;
