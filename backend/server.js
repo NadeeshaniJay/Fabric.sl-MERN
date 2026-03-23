@@ -13,7 +13,10 @@ const URL = process.env.MONGODB_URL;
 
 app.use(cors(
     {
-        origin: ["https://fabric-sl-mern.vercel.app"],
+        // origin: ["https://fabric-sl-mern.vercel.app"],
+        origin: ["http://localhost:3000",
+            "https://fabric-sl-mern.vercel.app",
+            "https://fabric-sl-mern.vercel.app/"],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true
     }
